@@ -10,6 +10,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared.Maps;
@@ -33,7 +34,11 @@ public abstract class SharedBiomeSystem : EntitySystem
     public const byte ChunkSize = 8; // Lavaland change - make it public
 
     // Goob - Cache Noise
-    private readonly Dictionary<(FastNoiseLite, int), FastNoiseLite> _noiseCache = new();
+    // Concurrent porque o GetNoise e chamado de dentro do Parallel.ForEach do
+    // BuildMarkerChunks. Com Dictionary comum duas threads corrompiam o cache, e ai
+    // o BiomeSystem.Update morria antes de limpar o _activeChunks e passava a estourar
+    // em todo tick pro resto da rodada.
+    private readonly ConcurrentDictionary<(FastNoiseLite, int), FastNoiseLite> _noiseCache = new();
 
     protected void ClearNoiseCache()
     {
