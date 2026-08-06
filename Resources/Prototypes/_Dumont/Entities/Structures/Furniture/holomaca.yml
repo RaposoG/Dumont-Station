@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: Holomaca
+  parent: [RollerBed, PowerCellSlotSmallItem]
+  name: holo-stretcher
+  description: A collapsible stretcher with a holographic emitter. Deployed it runs on a power cell, doubles as a valid surgical surface and slows the patient's metabolism.
+  components:
+  - type: Holomaca
+    multiplier: 5
+  - type: PowerCellDraw
+    drawRate: 0.6
+  - type: OperatingTable
+    speedModifier: 1
+  - type: Foldable
+    folded: true
+  - type: Strap
+    enabled: false
+  - type: Item
+    size: Normal
+    heldPrefix: rollerbed
+    shape:
+    - 0,0,1,0
+  - type: Sprite
+    sprite: Structures/Furniture/rollerbeds.rsi
+    color: "#7ec8e3"
+    noRot: true
+    layers:
+    - state: rollerbed
+      map: ["unfoldedLayer"]
+    - state: rollerbed_folded
+      map: ["foldedLayer"]
+      visible: false
+    - state: rollerbed_buckled
+      map: ["buckledLayer"]
+      visible: false
+  - type: Appearance
+  - type: StaticPrice
+    price: 400
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 150
+      Plastic: 75
+      Glass: 50

@@ -419,6 +419,7 @@
     - id: ComputerCargoRequestMedicalFlatpack # Goobstation
     - id: MedkitFilled
     - id: RubberStampCMO
+    - id: Holomaca # Dumont - holomaca
     # Goobstation Start
     - id: ChemistryHotplateFlatPack
     - id: BiomassReclaimerFlatpack

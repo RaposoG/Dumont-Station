@@ -929,6 +929,7 @@
     - Translators # Language
     - TranslatorImplanters # Language
     - MedicalModules # Gabystation
+    - HolomacaDumont # Dumont - holomaca
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: EmagLatheRecipes # Goobstation Packs

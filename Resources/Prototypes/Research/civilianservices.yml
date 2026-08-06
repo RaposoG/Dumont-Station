@@ -204,6 +204,7 @@
   - CryoPodMachineCircuitboard
   - CryostasisBeaker
   - SyringeCryostasis
+  - Holomaca # Dumont - holomaca
   # Goobstation R&D Console rework start
   position: 3,5
   technologyPrerequisites:

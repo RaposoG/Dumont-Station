@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  id: Holomaca
+  result: Holomaca
+  completetime: 3
+  materials:
+    Steel: 600
+    Plastic: 300
+    Glass: 200
+
+- type: latheRecipePack
+  id: HolomacaDumont
+  recipes:
+  - Holomaca
